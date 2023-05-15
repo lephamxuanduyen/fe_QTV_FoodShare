@@ -5937,7 +5937,7 @@
           <div class="frame-container">
             <div class="xc-nhn-xa-cu-khch-l-parent">
               <div class="xc-nhn-xa">Xác nhận xóa câu khích lệ</div>
-              <div class="close-button">
+              <div class="close-button js-DeleteCKl-close">
                 <img class="vector-icon2" alt="" src="./public/vector1.svg" />
               </div>
             </div>
@@ -5954,11 +5954,11 @@
             <div class="button-wrapper">
               <div class="button">
                 <div class="cancel">
-                  <div class="cancel1">
+                  <div class="cancel1 js-DeleteCKl-close">
                     <b class="admin">HỦY</b>
                   </div>
                 </div>
-                <div class="edit-button">
+                <div class="edit-button js-DeleteCKl-close">
                   <div class="edit-user">XÓA</div>
                 </div>
               </div>
@@ -6180,7 +6180,7 @@
     <script>//xóa cấu khích lệ
     const deleteCklBtns = document.querySelectorAll('.js-DeleteCkl')
     const deleteCklPage = document.querySelector('.xa-cu-khch-l')
-    const deleteCklCloseBtns = document.querySelectorAll('.')
+    const deleteCklCloseBtns = document.querySelectorAll('.js-DeleteCKl-close')
 
     function showDeleteCkl(){
       deleteCklPage.classList.add('open')
@@ -6191,6 +6191,10 @@
 
     for (deleteCklBtn of deleteCklBtns){
       deleteCklBtn.addEventListener('click',showDeleteCkl)
+    }
+
+    for (deleteCklCloseBtn of deleteCklCloseBtns){
+      deleteCklCloseBtn.addEventListener('click',hideDeleteCkl)
     }
     </script>
 
